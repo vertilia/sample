@@ -2,9 +2,9 @@
 
 require_once (dirname(__DIR__)."/vendor/autoload.php");
 
-use App\Controller\Router;
 use App\Env\App;
 use App\Env\ProdApp;
+use App\Env\Router;
 use App\Env\StageApp;
 use App\Env\VmApp;
 

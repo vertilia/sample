@@ -1,7 +1,12 @@
 <?php
 
-namespace App\Controller;
+namespace App\Env;
 
+use App\Controller\CliController;
+use App\Controller\ContractsController;
+use App\Controller\IndexHtmlController;
+use App\Controller\NotFoundHttpController;
+use App\Controller\UnknownController;
 use App\Env\App;
 use Vertilia\Request\CliRequest;
 use Vertilia\Request\HttpRequest;
