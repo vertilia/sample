@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "fc5d67bb3ca235362b971fed874a86f3",
+    "packages": [
+        {
+            "name": "vertilia/kit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vertilia/kit.git",
+                "reference": "36a4d5ed4bcd32b078a22808619efd178810ffe0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vertilia/kit/zipball/36a4d5ed4bcd32b078a22808619efd178810ffe0",
+                "reference": "36a4d5ed4bcd32b078a22808619efd178810ffe0",
+                "shasum": ""
+            },
+            "suggest": {
+                "ext-json": "To allow for JSON response generation in JsonResponse class",
+                "ext-mbstring": "To support multibyte handling in Nls class and values escaping in DbEntity class",
+                "ext-mysqli": "To support database operations in Db class",
+                "ext-session": "To handle session in Misc class",
+                "ext-zlib": "To handle blobs in Misc class"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vertilia\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Stas Trefilov",
+                    "email": "stas@vertilia.com"
+                }
+            ],
+            "description": "Basic toolkit for professional web developer",
+            "homepage": "https://github.com/vertilia/kit",
+            "keywords": [
+                "framework",
+                "kit",
+                "php",
+                "toolkit",
+                "vertilia"
+            ],
+            "support": {
+                "source": "https://github.com/vertilia/kit/tree/master",
+                "issues": "https://github.com/vertilia/kit/issues"
+            },
+            "time": "2017-05-14 17:01:41"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "vertilia/kit": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-session": "*"
+    },
+    "platform-dev": []
+}

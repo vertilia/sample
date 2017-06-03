@@ -1,0 +1,29 @@
+{
+    "name": "vertilia/vertilia-sample",
+    "description": "Skeleton application for REST service on Vertilia Kit framework",
+    "authors": [
+        {
+            "name": "Stas Trefilov",
+            "email": "stas@vertilia.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/vertilia/kit"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-session": "*",
+        "vertilia/kit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Psr\\Log\\": "vendor/psr/log/src/"
+        }
+    }
+}
