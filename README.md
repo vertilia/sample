@@ -6,10 +6,6 @@ We use composer-based dependency management and PSR-4 autoloader. A single `inde
 
 All application-specific code is placed in corresponding sub-directories of an `app` folder: models, views, controllers, environment configurations and translations.
 
-All user interface messages are handled by Text class from Vertilia Toolkit, which allows for full externalization of localization process.
-
-First, the messages are collected from source code and stored in .PO files with `gettext` utility. Then human translators prepare a new language translation using standard tools that work with .PO files. Finally, the fully translated .PO file is converted to php format and merged with the source code.
-
 ## Features
 
 + composer-managed project dependencies
@@ -22,6 +18,12 @@ First, the messages are collected from source code and stored in .PO files with 
 + input validation
 + PSR-2 style
 + testability
+
+## Translations
+
+All user interface messages are handled by Text class from Vertilia Toolkit, which allows for full externalization of localization process.
+
+First, the messages are collected from source code and stored in .PO files with `gettext` utility. Then human translators prepare a new language translation using standard tools that work with .PO files. Finally, the fully translated .PO file is converted to php format and merged with the source code.
 
 ## Application code structure
 
