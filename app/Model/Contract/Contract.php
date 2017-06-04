@@ -13,21 +13,19 @@ use Vertilia\Util\Misc;
 class Contract extends DbEntity
 {
     protected $table = 'contracts';
-    protected $id_fld = ContractRecord::CT_ID;
+    protected $id_fld = ContractRecord::ID;
 
     public $fields = [
-        ContractRecord::CT_ID => [self::TYPE=>self::TYPE_INT],
-        ContractRecord::CT_ON_ID => [self::TYPE=>self::TYPE_INT],
-        ContractRecord::CT_CN_ID => [self::TYPE=>self::TYPE_INT],
-        ContractRecord::CT_UR_ID => [self::TYPE=>self::TYPE_INT],
-        ContractRecord::CT_OWNER_TYPE => [self::TYPE=>self::TYPE_ALPHA],
-        ContractRecord::CT_REF_NUM => [self::TYPE=>self::TYPE_ALPHA, self::WIDTH=>85],
-        ContractRecord::CT_IS_VALID => [self::TYPE=>self::TYPE_INT],
-        ContractRecord::CT_DATE_UPDATED => [self::TYPE=>self::TYPE_ALPHA],
-        ContractRecord::CT_DATE_BEGIN => [self::TYPE=>self::TYPE_ALPHA],
-        ContractRecord::CT_DATE_END => [self::TYPE=>self::TYPE_ALPHA],
-        ContractRecord::CT_DESCRIPTION => [self::TYPE=>self::TYPE_ALPHA, self::WIDTH=>255],
-        ContractRecord::CT_ATTR => [self::TYPE=>self::TYPE_BLOB, self::WIDTH=>65535],
+        ContractRecord::ID => [self::TYPE=>self::TYPE_INT],
+        ContractRecord::ID_USERS => [self::TYPE=>self::TYPE_INT],
+        ContractRecord::OWNER_TYPE => [self::TYPE=>self::TYPE_ALPHA],
+        ContractRecord::REF_NUM => [self::TYPE=>self::TYPE_ALPHA, self::WIDTH=>85],
+        ContractRecord::IS_VALID => [self::TYPE=>self::TYPE_INT],
+        ContractRecord::DATE_UPDATED => [self::TYPE=>self::TYPE_ALPHA],
+        ContractRecord::DATE_BEGIN => [self::TYPE=>self::TYPE_ALPHA],
+        ContractRecord::DATE_END => [self::TYPE=>self::TYPE_ALPHA],
+        ContractRecord::DESCRIPTION => [self::TYPE=>self::TYPE_ALPHA, self::WIDTH=>255],
+        ContractRecord::ATTR => [self::TYPE=>self::TYPE_BLOB, self::WIDTH=>65535],
     ];
 
     /**
@@ -39,7 +37,7 @@ class Contract extends DbEntity
     public function __construct(Text $text, Nls $nls, Db $db, Logger $log)
     {
         parent::__construct($text, $nls, $db, $log);
-        $this->fields[ContractRecord::CT_OWNER_TYPE][self::ITEMS] = [
+        $this->fields[ContractRecord::OWNER_TYPE][self::ITEMS] = [
             'prov'=>$text->_('provider'),
             'cli'=>$text->_('client'),
         ];

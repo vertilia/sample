@@ -64,26 +64,21 @@ class ContractsController extends AppJsonResponse
 
     public function createAction()
     {
-        $ct = new ContractRecord([ContractRecord::CT_ON_ID=>1, ContractRecord::CT_UR_ID=>1] + $this->app->request->args);
+        $ct = new ContractRecord([ContractRecord::ID_USERS=>1] + $this->app->request->args);
         if (! $this->contract->validate($ct, [
-            ContractRecord::CT_CN_ID => Entity::REQUIRED,
-            ContractRecord::CT_OWNER_TYPE => Entity::REQUIRED,
-            ContractRecord::CT_REF_NUM => Entity::REQUIRED,
-            ContractRecord::CT_IS_VALID => [],
-            ContractRecord::CT_DATE_UPDATED => [],
-            ContractRecord::CT_DATE_BEGIN => [],
-            ContractRecord::CT_DATE_END => [],
-            ContractRecord::CT_DESCRIPTION => [],
-            ContractRecord::CT_ATTR => [],
+            ContractRecord::OWNER_TYPE => Entity::REQUIRED,
+            ContractRecord::REF_NUM => Entity::REQUIRED,
+            ContractRecord::IS_VALID => [],
+            ContractRecord::DATE_UPDATED => [],
+            ContractRecord::DATE_BEGIN => [],
+            ContractRecord::DATE_END => [],
+            ContractRecord::DESCRIPTION => [],
+            ContractRecord::ATTR => [],
         ])) {
-            $this->setError($this->app->text->_($this->contract->errors));
-        } elseif (1 != $ct->ct_cn_id) {
-            $this->setError($this->app->text->_('you are not authorized to create contracts with this company'));
-        } elseif ($ct->ct_date_begin and $ct->ct_date_end and $ct->ct_date_begin != $ct->ct_date_end) {
+            $this->setError($this->contract->errors);
+        } elseif ($ct->date_begin and $ct->date_end and $ct->date_begin != $ct->date_end) {
             $this->setError($this->app->text->_('beginning and end dates do not match'));
         } else {
-            $ct->ct_ur_id = 1;
-            $ct->ct_on_id = 1;
             try {
                 $this->result = $this->contract->saveRecord($ct);
             } catch (Exception $e) {
